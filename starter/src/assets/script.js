@@ -1,4 +1,29 @@
 /* Create an array named products which you will use to add all of your product object literals that you create in the next step. */
+const products = [
+  {name: "strawberry",
+   price: 3.00,
+   quantity: 0,
+   productId: 100,
+   image: '/images/strawberry.jpg'
+},
+
+  {name: "orange",
+   price: 4.00,
+   quantity: 0,
+   productId: 101,
+   image: './images/orange.jpg'
+  },
+
+  {name: "cherry",
+   price: 4.00,
+   quantity: 0,
+   productID: 102,
+   image: '/images/oragne.jpg'
+
+  }
+
+]
+
 
 /* Create 3 or more product objects using object literal notation 
    Each product should include five properties
