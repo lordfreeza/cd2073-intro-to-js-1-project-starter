@@ -1,28 +1,4 @@
 /* Create an array named products which you will use to add all of your product object literals that you create in the next step. */
-const products = [
-  {name: "strawberry",
-   price: 3.00,
-   quantity: 0,
-   productId: 100,
-   image: '/images/strawberry.jpg'
-},
-
-  {name: "orange",
-   price: 4.00,
-   quantity: 0,
-   productId: 101,
-   image: './images/orange.jpg'
-  },
-
-  {name: "cherry",
-   price: 4.00,
-   quantity: 0,
-   productID: 102,
-   image: '/images/oragne.jpg'
-
-  }
-
-]
 
 
 /* Create 3 or more product objects using object literal notation 
@@ -40,13 +16,60 @@ const products = [
    - strawberry.jpg by Allec Gomes
 */
 
+const products = [
+  {
+    name: "strawberry",
+    price: 3.00,
+    quantity: 0,
+    productId: 100,
+    image: '/images/strawberry.jpg'
+  },
+
+  {
+    name: "orange",
+    price: 4.00,
+    quantity: 0,
+    productId: 101,
+    image: '/images/orange.jpg'
+  },
+
+  {
+    name: "cherry",
+    price: 4.00,
+    quantity: 0,
+    productId: 102,
+    image: '/images/oragne.jpg'
+
+  }
+
+]
+
+
 /* Declare an empty array named cart to hold the items in the cart */
+
+const cart = [];
 
 /* Create a function named addProductToCart that takes in the product productId as an argument
   - addProductToCart should get the correct product based on the productId
   - addProductToCart should then increase the product's quantity
   - if the product is not already in the cart, add it to the cart
 */
+
+function addProductToCart(productId) {
+  for (let i = 0; i < productID.length; i++) {
+    if (products[i].productId === productId) {
+      products[i].quantity += 1;
+      if (products[i].quantity === 1) {
+        cart.push(products[i]);
+      } else {
+        console.log("Invalid product Id, please enter a valid product")
+      }
+      return;
+    }
+
+  }
+}
+
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
   - increaseQuantity should get the correct product based on the productId
@@ -90,15 +113,15 @@ const products = [
 */
 
 module.exports = {
-   products,
-   cart,
-   addProductToCart,
-   increaseQuantity,
-   decreaseQuantity,
-   removeProductFromCart,
-   cartTotal,
-   pay, 
-   emptyCart,
-   /* Uncomment the following line if completing the currency converter bonus */
-   // currency
+  products,
+  cart,
+  addProductToCart,
+  increaseQuantity,
+  decreaseQuantity,
+  removeProductFromCart,
+  cartTotal,
+  pay,
+  emptyCart,
+  /* Uncomment the following line if completing the currency converter bonus */
+  // currency
 }
