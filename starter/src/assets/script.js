@@ -18,7 +18,7 @@
 
 const products = [
   {
-    name: "strawberry",
+    name: "Carton of Strawberries",
     price: 3.00,
     quantity: 0,
     productId: 100,
@@ -26,7 +26,7 @@ const products = [
   },
 
   {
-    name: "orange",
+    name: "Bag of Oranges",
     price: 4.00,
     quantity: 0,
     productId: 101,
@@ -34,12 +34,11 @@ const products = [
   },
 
   {
-    name: "cherry",
-    price: 4.00,
+    name: "Bag of Cherries",
+    price: 3.00,
     quantity: 0,
     productId: 102,
-    image: '/images/oragne.jpg'
-
+    image: '/images/cherry.jpg'
   }
 
 ]
