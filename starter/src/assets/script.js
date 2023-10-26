@@ -54,18 +54,13 @@ const cart = [];
   - if the product is not already in the cart, add it to the cart
 */
 
-function addProductToCart(productId) {
-  for (let i = 0; i < productID.length; i++) {
-    if (products[i].productId === productId) {
-      products[i].quantity += 1;
-      if (products[i].quantity === 1) {
-        cart.push(products[i]);
-      } else {
-        console.log("Invalid product Id, please enter a valid product")
-      }
-      return;
-    }
+function addProductToCart (productId) {
+  if (products[i].productId === productId) {
+    products[i].productId += 1; 
+  }
 
+  if (!cart.includes(products[i])){
+    cart.push(products[i]);
   }
 }
 
@@ -74,6 +69,10 @@ function addProductToCart(productId) {
   - increaseQuantity should get the correct product based on the productId
   - increaseQuantity should then increase the product's quantity
 */
+
+function increaseQuantity(productID){
+
+}
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
