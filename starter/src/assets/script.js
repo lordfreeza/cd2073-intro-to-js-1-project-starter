@@ -55,23 +55,29 @@ const cart = [];
 */
 
 function addProductToCart (productId) {
+  for (let i = 0; i < products.length; i++) {
   if (products[i].productId === productId) {
-    products[i].productId += 1; 
+    products[i].quantity += 1; 
+  
+  if (!cart.some(item => item.productId === productId)) {
+      cart.push(products[i]);
   }
-
-  if (!cart.includes(products[i])){
-    cart.push(products[i]);
-  }
+  break; //Exit loop once product is found
 }
-
+ }
+}
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
   - increaseQuantity should get the correct product based on the productId
   - increaseQuantity should then increase the product's quantity
 */
 
-function increaseQuantity(productID){
-
+  function increaseQuantity(productID){
+    for (let i = 0; i < products.length; i++) {
+      if (products[i].productId === productId) {
+        products[i].quantity += 1;
+      }
+    }
 }
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
