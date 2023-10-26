@@ -92,7 +92,7 @@ function decreaseQuantity(productID){
       products[i].quantity -= 1;
     }
     if (products[i].quantity === 0){
-      cart.splice(cart.indexOf(products[i], 1));
+      cart.splice(cart.indexOf(products[i]), 1);
     }
   
   }
@@ -103,6 +103,16 @@ function decreaseQuantity(productID){
   - removeProductFromCart should update the product quantity to 0
   - removeProductFromCart should remove the product from the cart
 */
+
+
+function removeProductFromCart(productId) {
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].productId === productId) {
+      products[i].quantity = 0;
+      cart.splice(cart.indexOf(products[i]), 1)
+    }
+  }
+}
 
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total cost of all products
