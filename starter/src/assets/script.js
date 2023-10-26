@@ -130,12 +130,27 @@ function cartTotal() {
 
 /* Create a function called emptyCart that empties the products from the cart */
 
+function emptyCart() {
+  for (i = 0; i < cart.length; i++) {
+    cart.splice(indexOf(cart[i]), 1);
+  }
+}
+
 /* Create a function named pay that takes in an amount as an argument
   - amount is the money paid by customer
   - pay will return a negative number if there is a remaining balance
   - pay will return a positive number if money should be returned to customer
   Hint: cartTotal function gives us cost of all the products in the cart  
 */
+
+function pay(amount) {
+  if (cartTotal() > amount) {
+    let newTotal = -(cartTotal() - amount);
+    return newTotal;
+  }
+
+
+}
 
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
 
