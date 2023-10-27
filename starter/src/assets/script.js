@@ -64,13 +64,13 @@ function findProductById(productID) {
 function addProductToCart(productID) {
   const product = findProductById(productID)
   if (product) {
-      product.quantity += 1;
+    product.quantity += 1;
 
-      if (!cart.some(item => item.productId === productID)) {
-        cart.push(product);
-      }
+    if (!cart.some(item => item.productId === productID)) {
+      cart.push(product);
     }
   }
+}
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
   - increaseQuantity should get the correct product based on the productId
@@ -79,10 +79,10 @@ function addProductToCart(productID) {
 
 function increaseQuantity(productID) {
   const product = findProductById(productID)
-  if (product)  {
-      product.quantity += 1;
-    }
+  if (product) {
+    product.quantity += 1;
   }
+}
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
@@ -92,14 +92,14 @@ function increaseQuantity(productID) {
 
 function decreaseQuantity(productID) {
   const product = findProductById(productID)
-  if (product)  {
-      product.quantity -= 1;
-    }
-    if (product.quantity === 0) {
-      cart.splice(cart.indexOf(product), 1);
-    }
-
+  if (product) {
+    product.quantity -= 1;
   }
+  if (product.quantity === 0) {
+    cart.splice(cart.indexOf(product), 1);
+  }
+
+}
 
 /* Create a function named removeProductFromCart that takes in the productId as an argument
   - removeProductFromCart should get the correct product based on the productId
@@ -110,11 +110,11 @@ function decreaseQuantity(productID) {
 
 function removeProductFromCart(productID) {
   const product = findProductById(productID)
-  if (product)  {
-      product.quantity = 0;
-      cart.splice(cart.indexOf(product, 1))
-    }
+  if (product) {
+    product.quantity = 0;
+    cart.splice(cart.indexOf(product, 1))
   }
+}
 
 
 /* Create a function named cartTotal that has no parameters
