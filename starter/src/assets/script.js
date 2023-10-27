@@ -55,18 +55,18 @@ const cart = [];
 */
 
 //Helper function to eliminate constant for loops//
-function findProductById(productID) {
-  return products.find(product => product.productId === productID);
+function findProductById(usersProductId) {
+  return products.find(product => product.productId === usersProductId);
 }
 
 //Shopping Cart Functions
 
-function addProductToCart(productID) {
-  const product = findProductById(productID)
+function addProductToCart(usersProductId) {
+  const product = findProductById(usersProductId)
   if (product) {
     product.quantity += 1;
 
-    if (!cart.some(item => item.productId === productID)) {
+    if (!cart.some(item => item.productId === usersProductId)) {
       cart.push(product);
     }
   }
@@ -77,8 +77,8 @@ function addProductToCart(productID) {
   - increaseQuantity should then increase the product's quantity
 */
 
-function increaseQuantity(productID) {
-  const product = findProductById(productID)
+function increaseQuantity(usersProductId) {
+  const product = findProductById(usersProductId)
   if (product) {
     product.quantity += 1;
   }
@@ -90,8 +90,8 @@ function increaseQuantity(productID) {
   - if the function decreases the quantity to 0, the product is removed from the cart
 */
 
-function decreaseQuantity(productID) {
-  const product = findProductById(productID)
+function decreaseQuantity(usersProductID) {
+  const product = findProductById(usersProductID)
   if (product) {
     product.quantity -= 1;
   }
@@ -108,8 +108,8 @@ function decreaseQuantity(productID) {
 */
 
 
-function removeProductFromCart(productID) {
-  const product = findProductById(productID)
+function removeProductFromCart(usersProductId) {
+  const product = findProductById(usersProductId)
   if (product) {
     product.quantity = 0;
     cart.splice(cart.indexOf(product, 1))
