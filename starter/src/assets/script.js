@@ -46,6 +46,8 @@ const products = [
 
 /* Declare an empty array named cart to hold the items in the cart */
 
+//Global Variables
+
 const cart = [];
 
 const totalPaid = 0;
@@ -149,13 +151,15 @@ function emptyCart() {
 */
 
 function pay(amount) {
-  let grandTotal = cartTotal();
-  let newTotal = amount - grandTotal;
-  if (grandTotal > amount || amount > grandTotal) {
-    return newTotal;
+  totalPaid += amount;
+  let remaining = totalPaid - cartTotal();
+  if (remaining >= 0) {
+    totalPaid = 0;
+    emptyCart();
   } else {
-    return 0;
+    return remaining;
   }
+  
 }
 
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
