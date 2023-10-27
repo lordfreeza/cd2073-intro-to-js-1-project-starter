@@ -22,7 +22,7 @@ const products = [
     price: 3.00,
     quantity: 0,
     productId: 100,
-    image: '/images/strawberry.jpg'
+    image: './images/strawberry.jpg'
   },
 
   {
@@ -30,7 +30,7 @@ const products = [
     price: 4.00,
     quantity: 0,
     productId: 101,
-    image: '/images/orange.jpg'
+    image: './images/orange.jpg'
   },
 
   {
@@ -38,7 +38,7 @@ const products = [
     price: 3.00,
     quantity: 0,
     productId: 102,
-    image: '/images/cherry.jpg'
+    image: './images/cherry.jpg'
   }
 
 ]
@@ -47,6 +47,8 @@ const products = [
 /* Declare an empty array named cart to hold the items in the cart */
 
 const cart = [];
+
+const totalPaid = 0;
 
 /* Create a function named addProductToCart that takes in the product productId as an argument
   - addProductToCart should get the correct product based on the productId
