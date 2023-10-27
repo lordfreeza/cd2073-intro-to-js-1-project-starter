@@ -112,7 +112,7 @@ function removeProductFromCart(usersProductId) {
   const product = findProductById(usersProductId)
   if (product) {
     product.quantity = 0;
-    cart.splice(cart.indexOf(product, 1))
+    cart.splice(cart.indexOf(product), 1)
   }
 }
 
