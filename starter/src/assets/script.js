@@ -55,17 +55,17 @@ const cart = [];
 */
 
 
-function addProductToCart (productID) {
+function addProductToCart(productID) {
   for (let i = 0; i < products.length; i++) {
-  if (products[i].productId === productID) {
-    products[i].quantity += 1; 
-  
-  if (!cart.some(item => item.productId === productID)) {
-      cart.push(products[i]);
+    if (products[i].productId === productID) {
+      products[i].quantity += 1;
+
+      if (!cart.some(item => item.productId === productID)) {
+        cart.push(products[i]);
+      }
+      break; //Exit loop once product is found
+    }
   }
-  break; //Exit loop once product is found
-}
- }
 }
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
@@ -73,12 +73,12 @@ function addProductToCart (productID) {
   - increaseQuantity should then increase the product's quantity
 */
 
-  function increaseQuantity(productID){
-    for (let i = 0; i < products.length; i++) {
-      if (products[i].productId === productID) {
-        products[i].quantity += 1;
-      }
+function increaseQuantity(productID) {
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].productId === productID) {
+      products[i].quantity += 1;
     }
+  }
 }
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
@@ -87,15 +87,15 @@ function addProductToCart (productID) {
   - if the function decreases the quantity to 0, the product is removed from the cart
 */
 
-function decreaseQuantity(productID){
+function decreaseQuantity(productID) {
   for (let i = 0; i < products.length; i++) {
     if (products[i].productId === productID) {
       products[i].quantity -= 1;
     }
-    if (products[i].quantity === 0){
+    if (products[i].quantity === 0) {
       cart.splice(cart.indexOf(products[i]), 1);
     }
-  
+
   }
 }
 
@@ -123,11 +123,11 @@ function removeProductFromCart(productId) {
 
 function cartTotal() {
   let total = 0;
-  cart.forEach (item => {
+  cart.forEach(item => {
     total += item.price * item.quantity;
   })
   return total;
-  }    
+}
 
 /* Create a function called emptyCart that empties the products from the cart */
 
