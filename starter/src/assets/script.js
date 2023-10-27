@@ -54,12 +54,13 @@ const cart = [];
   - if the product is not already in the cart, add it to the cart
 */
 
-function addProductToCart (productId) {
+
+function addProductToCart (productID) {
   for (let i = 0; i < products.length; i++) {
-  if (products[i].productId === productId) {
+  if (products[i].productId === productID) {
     products[i].quantity += 1; 
   
-  if (!cart.some(item => item.productId === productId)) {
+  if (!cart.some(item => item.productId === productID)) {
       cart.push(products[i]);
   }
   break; //Exit loop once product is found
@@ -122,7 +123,6 @@ function removeProductFromCart(productId) {
 
 function cartTotal() {
   let total = 0;
-  let i = 0;
   cart.forEach (item => {
     total += item.price * item.quantity;
   })
