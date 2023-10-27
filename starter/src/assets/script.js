@@ -50,7 +50,7 @@ const products = [
 
 const cart = [];
 
-const totalPaid = 0;
+let totalPaid = 0;
 
 /* Create a function named addProductToCart that takes in the product productId as an argument
   - addProductToCart should get the correct product based on the productId
@@ -139,7 +139,7 @@ function cartTotal() {
 
 function emptyCart() {
   for (i = 0; i < cart.length; i++) {
-    cart.splice(indexOf(cart[i]), 1);
+    cart.splice(cart.indexOf(cart[i]), 1);
   }
 }
 
@@ -156,10 +156,8 @@ function pay(amount) {
   if (remaining >= 0) {
     totalPaid = 0;
     emptyCart();
-  } else {
-    return remaining;
   }
-  
+  return remaining;
 }
 
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
