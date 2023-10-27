@@ -74,7 +74,7 @@ function addProductToCart (productId) {
 
   function increaseQuantity(productID){
     for (let i = 0; i < products.length; i++) {
-      if (products[i].productId === productId) {
+      if (products[i].productId === productID) {
         products[i].quantity += 1;
       }
     }
@@ -88,7 +88,7 @@ function addProductToCart (productId) {
 
 function decreaseQuantity(productID){
   for (let i = 0; i < products.length; i++) {
-    if (products[i].productId === productId) {
+    if (products[i].productId === productID) {
       products[i].quantity -= 1;
     }
     if (products[i].quantity === 0){
@@ -122,11 +122,12 @@ function removeProductFromCart(productId) {
 
 function cartTotal() {
   let total = 0;
-  for (let i = 0; i < cart.length; i++) {
-    total += cart[i].price;
-  } 
+  let i = 0;
+  cart.forEach (item => {
+    total += item.price * item.quantity;
+  })
   return total;
-}
+  }    
 
 /* Create a function called emptyCart that empties the products from the cart */
 
@@ -144,12 +145,13 @@ function emptyCart() {
 */
 
 function pay(amount) {
-  if (cartTotal() > amount) {
-    let newTotal = -(cartTotal() - amount);
+  let grandTotal = cartTotal();
+  let newTotal = amount - grandTotal;
+  if (grandTotal > amount || amount > grandTotal) {
     return newTotal;
+  } else {
+    return 0;
   }
-
-
 }
 
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
