@@ -54,19 +54,23 @@ const cart = [];
   - if the product is not already in the cart, add it to the cart
 */
 
+//Helper function to eliminate constant for loops//
+function findProductById(productID) {
+  return products.find(product => product.productId === productID);
+}
+
+//Shopping Cart Functions
 
 function addProductToCart(productID) {
-  for (let i = 0; i < products.length; i++) {
-    if (products[i].productId === productID) {
-      products[i].quantity += 1;
+  const product = findProductById(productID)
+  if (product) {
+      product.quantity += 1;
 
       if (!cart.some(item => item.productId === productID)) {
-        cart.push(products[i]);
+        cart.push(product);
       }
-      break; //Exit loop once product is found
     }
   }
-}
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
   - increaseQuantity should get the correct product based on the productId
@@ -74,12 +78,11 @@ function addProductToCart(productID) {
 */
 
 function increaseQuantity(productID) {
-  for (let i = 0; i < products.length; i++) {
-    if (products[i].productId === productID) {
-      products[i].quantity += 1;
+  const product = findProductById(productID)
+  if (product)  {
+      product.quantity += 1;
     }
   }
-}
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
@@ -88,16 +91,15 @@ function increaseQuantity(productID) {
 */
 
 function decreaseQuantity(productID) {
-  for (let i = 0; i < products.length; i++) {
-    if (products[i].productId === productID) {
-      products[i].quantity -= 1;
+  const product = findProductById(productID)
+  if (product)  {
+      product.quantity -= 1;
     }
-    if (products[i].quantity === 0) {
-      cart.splice(cart.indexOf(products[i]), 1);
+    if (product.quantity === 0) {
+      cart.splice(cart.indexOf(product), 1);
     }
 
   }
-}
 
 /* Create a function named removeProductFromCart that takes in the productId as an argument
   - removeProductFromCart should get the correct product based on the productId
@@ -106,14 +108,14 @@ function decreaseQuantity(productID) {
 */
 
 
-function removeProductFromCart(productId) {
-  for (let i = 0; i < products.length; i++) {
-    if (products[i].productId === productId) {
-      products[i].quantity = 0;
-      cart.splice(cart.indexOf(products[i]), 1)
+function removeProductFromCart(productID) {
+  const product = findProductById(productID)
+  if (product)  {
+      product.quantity = 0;
+      cart.splice(cart.indexOf(product, 1))
     }
   }
-}
+
 
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total cost of all products
